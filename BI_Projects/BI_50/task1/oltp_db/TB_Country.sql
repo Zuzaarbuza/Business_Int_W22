@@ -1,5 +1,5 @@
 create table BI_Bikes_50.TB_Country (
-	CountryID INT primary key,
+	CountryID INT primary key not null,
     Country varchar(30) not null,
     Region varchar(30) not null,
     TaxRate decimal(13,4),
