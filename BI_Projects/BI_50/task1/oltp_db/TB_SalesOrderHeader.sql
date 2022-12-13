@@ -11,8 +11,8 @@ create table BI_Bikes_50.TB_SalesOrderHeader (
     ShipToAddressID int not null,
     ShipMethodID int not null,
     FOREIGN KEY (OrderStatusID) REFERENCES TB_OrderStatus(OrderStatusID),
-    FOREIGN KEY (CustomerID) REFERENCES TB_Customer.CustomerID,
-    FOREIGN KEY (BillToAddressID) REFERENCES TB_Address.AddressID,
-    FOREIGN KEY (ShipToAddressID) REFERENCES TB_Address.AddressID,
-    FOREIGN KEY (ShipMethodID) REFERENCES TB_ShipMethod.ShipMethodID
+    FOREIGN KEY (CustomerID) REFERENCES TB_Customer(CustomerID),
+    FOREIGN KEY (BillToAddressID) REFERENCES TB_Address(AddressID),
+    FOREIGN KEY (ShipToAddressID) REFERENCES TB_Address(AddressID),
+    FOREIGN KEY (ShipMethodID) REFERENCES TB_ShipMethod(ShipMethodID)
 )
