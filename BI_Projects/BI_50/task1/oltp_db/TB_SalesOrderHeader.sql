@@ -1,6 +1,6 @@
 
 create table BI_Bikes_50.TB_SalesOrderHeader (
-	SalesOrderID INT primary key,
+	SalesOrderID INT primary key not null,
     SalesOrderNumber varchar(30) not null,
     OrderDate date not null,
     DueDate date not null,
@@ -10,6 +10,7 @@ create table BI_Bikes_50.TB_SalesOrderHeader (
     BillToAddressID int not null,
     ShipToAddressID int not null,
     ShipMethodID int not null,
+    
     FOREIGN KEY (OrderStatusID) REFERENCES TB_OrderStatus(OrderStatusID),
     FOREIGN KEY (CustomerID) REFERENCES TB_Customer(CustomerID),
     FOREIGN KEY (BillToAddressID) REFERENCES TB_Address(AddressID),
