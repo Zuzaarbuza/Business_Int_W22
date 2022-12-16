@@ -1,0 +1,28 @@
+create table Fact_InternetSales (
+	PK_FactInternetSales varchar(50) primary key not null,
+    SalesOrderNumber varchar(30) not null,
+    OrderDateKey INT, 
+	OrderDate date not null,
+    DueDateKey INT,
+    DueDate date not null,
+    ShipDateKey INT,
+    ShipDate date,
+    ProductKey INT,
+    CustomerKey INT,
+    ShipToLocationKey INT,
+    OrderStatus varchar(50),
+    ShipMethod varchar(50),
+    OrderQty int not null,
+    UnitPrice decimal(13,4) not null,
+    OrderLineTotal decimal(13,4),
+    OrderLineProfit decimal(13,4),
+    OrderLineTaxAmt decimal (13,4),
+    OrderLineShippingCost decimal(13,4),
+    
+    constraint FK_ProductKey_FactInternetSales foreign key (ProductKey) references Dim_Product(PK_DimProduct),
+    constraint FK_ShipToLocation_FactInternetSales foreign key (ShipToLocationKey) references Dim_Location(PK_DimLocation),
+    constraint FK_Customer_FactInternetSales foreign key (CustomerKey) references Dim_Customer(PK_DimCustomer),
+    constraint FK_OrderDate_FactInternetSales foreign key (OrderDateKey) references Dim_Date(PK_DimDate),
+    constraint FK_DueDate_FactinternetSales foreign key (DueDateKey) references Dim_Date(PK_DimDate),
+    constraint FK_ShipDate_FactIntrnetSales foreign key (ShipDateKey) references Dim_Date(PK_DimDate)
+)
