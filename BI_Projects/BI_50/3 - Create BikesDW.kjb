@@ -11,6 +11,78 @@
   <modified_date>2022/12/15 16:31:47.241</modified_date>
   <parameters>
     </parameters>
+  <connection>
+    <name>BI_Bikes_50</name>
+    <server>localhost</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>BI_Bikes_50</database>
+    <port>3306</port>
+    <username>bi2022</username>
+    <password>Encrypted 2be98afc86aa7f2e4a910fc208cc0989b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.allowLoadLocalInfile</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.defaultFetchSize</code>
+        <attribute>500</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SQL_CONNECT</code>
+        <attribute>SET GLOBAL local_infile = 'ON';
+</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <slaveservers>
     </slaveservers>
   <job-log-table>
@@ -318,7 +390,7 @@
       <sqlfromfile>T</sqlfromfile>
       <sqlfilename>D:\ZU\STUDIA\MGR\SEM1\BI\Business_Int_W22\BI_Projects\BI_50\task2\data_mart\Dim_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection/>
+      <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -336,7 +408,7 @@
       <sqlfromfile>T</sqlfromfile>
       <sqlfilename>D:\ZU\STUDIA\MGR\SEM1\BI\Business_Int_W22\BI_Projects\BI_50\task2\data_mart\Dim_Location.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection/>
+      <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -354,7 +426,7 @@
       <sqlfromfile>T</sqlfromfile>
       <sqlfilename>D:\ZU\STUDIA\MGR\SEM1\BI\Business_Int_W22\BI_Projects\BI_50\task2\data_mart\Dim_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection/>
+      <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -372,7 +444,7 @@
       <sqlfromfile>T</sqlfromfile>
       <sqlfilename>D:\ZU\STUDIA\MGR\SEM1\BI\Business_Int_W22\BI_Projects\BI_50\task2\data_mart\Dim_Date.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection/>
+      <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -390,7 +462,7 @@
       <sqlfromfile>T</sqlfromfile>
       <sqlfilename>D:\ZU\STUDIA\MGR\SEM1\BI\Business_Int_W22\BI_Projects\BI_50\task2\data_mart\Fact_InternetSales.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
-      <connection/>
+      <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
