@@ -1,14 +1,14 @@
 <job>
-  <name>3 - Create BikesDW</name>
+  <name>4 - Load BikesDW</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2022/12/15 16:31:47.241</created_date>
+  <created_date>2022/12/20 17:04:50.310</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2022/12/20 17:10:46.044</modified_date>
+  <modified_date>2022/12/20 17:16:43.505</modified_date>
   <parameters>
     <parameter>
       <name>MyPath</name>
@@ -380,105 +380,105 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
-      <yloc>144</yloc>
+      <xloc>160</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Dim_Product</name>
+      <name>Fill_Dim_Date</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}\task2\data_mart\Dim_Product.sql</sqlfilename>
+      <sqlfilename>${MyPath}\task2\etl_sales\Fill_Dim_Date.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
-      <yloc>144</yloc>
+      <xloc>360</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Dim_Location</name>
+      <name>Fill_Dim_Customer</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}\task2\data_mart\Dim_Location.sql</sqlfilename>
+      <sqlfilename>${MyPath}\task2\etl_sales\Fill_Dim_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
-      <yloc>144</yloc>
+      <xloc>560</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Dim_Customer</name>
+      <name>Fill_Dim_Location</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}\task2\data_mart\Dim_Customer.sql</sqlfilename>
+      <sqlfilename>${MyPath}\task2\etl_sales\Fill_Dim_Location.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>144</yloc>
+      <xloc>760</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Dim_Date</name>
+      <name>Fill_Dim_Product</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}\task2\data_mart\Dim_Date.sql</sqlfilename>
+      <sqlfilename>${MyPath}\task2\etl_sales\Fill_Dim_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>816</xloc>
-      <yloc>144</yloc>
+      <xloc>960</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Fact_InternetSales</name>
+      <name>Fill_Fact_InternetSales</name>
       <description/>
       <type>SQL</type>
       <attributes/>
       <sql/>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${MyPath}\task2\data_mart\Fact_InternetSales.sql</sqlfilename>
+      <sqlfilename>${MyPath}\task2\etl_sales\Fill_Fact_InternetSales.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_Bikes_50</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>944</xloc>
-      <yloc>144</yloc>
+      <xloc>1152</xloc>
+      <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
     <hop>
       <from>Start</from>
-      <to>Dim_Product</to>
+      <to>Fill_Dim_Date</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -486,8 +486,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Dim_Product</from>
-      <to>Dim_Location</to>
+      <from>Fill_Dim_Date</from>
+      <to>Fill_Dim_Customer</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -495,8 +495,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Dim_Location</from>
-      <to>Dim_Customer</to>
+      <from>Fill_Dim_Customer</from>
+      <to>Fill_Dim_Location</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -504,8 +504,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Dim_Customer</from>
-      <to>Dim_Date</to>
+      <from>Fill_Dim_Location</from>
+      <to>Fill_Dim_Product</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -513,8 +513,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Dim_Date</from>
-      <to>Fact_InternetSales</to>
+      <from>Fill_Dim_Product</from>
+      <to>Fill_Fact_InternetSales</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
