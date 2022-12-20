@@ -1,7 +1,7 @@
-create table BI_BikesDW_50.Dim_Customer (
-	PK_DimCustomer INT primary key,
-    AccountNumber varchar(30) not null,
-    FullName varchar(150),
-    Gender varchar(1),
+CREATE TABLE BI_BikesDW_50.Dim_Customer (
+    PK_DimCustomer INT PRIMARY KEY,
+    AccountNumber VARCHAR(30) NOT NULL,
+    FullName VARCHAR(150),
+    Gender VARCHAR(1),
     Age INT
 )

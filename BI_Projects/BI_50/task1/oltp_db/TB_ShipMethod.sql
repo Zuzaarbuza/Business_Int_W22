@@ -1,6 +1,6 @@
-create table BI_Bikes_50.TB_ShipMethod (
-	ShipMethodID INT primary key not null,
-    ShipMethodName varchar(50) not null,
-    ShipBase decimal(13,4) not null,
-    ShipRate decimal(13,4) not null
+CREATE TABLE BI_Bikes_50.TB_ShipMethod (
+    ShipMethodID INT PRIMARY KEY NOT NULL,
+    ShipMethodName VARCHAR(50) NOT NULL,
+    ShipBase DECIMAL(13 , 4 ) NOT NULL,
+    ShipRate DECIMAL(13 , 4 ) NOT NULL
 )

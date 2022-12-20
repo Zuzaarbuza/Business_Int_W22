@@ -1,9 +1,9 @@
-create table BI_Bikes_50.TB_Address (
-	AddressID INT primary key,
-    CountryID INT not null,
-    AddressLine varchar(60) not null,
-    City varchar(30) not null,
-    PostalCode varchar(15) not null,
+CREATE TABLE BI_Bikes_50.TB_Address (
+    AddressID INT PRIMARY KEY,
+    CountryID INT NOT NULL,
+    AddressLine VARCHAR(60) NOT NULL,
+    City VARCHAR(30) NOT NULL,
+    PostalCode VARCHAR(15) NOT NULL,
     
-    FOREIGN KEY (CountryID) REFERENCES TB_Country(CountryID)
+    FOREIGN KEY (CountryID) REFERENCES TB_Country (CountryID)
 )

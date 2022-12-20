@@ -1,3 +1,15 @@
-insert into BI_BikesDW_50.Dim_Customer (PK_DimCustomer, AccountNumber, FullName, Gender, Age)
-(select customer.CustomerID, customer.AccountNumber, concat(person.FirstName, ' ', person.MiddleName, ' ', person.MiddleName), person.Gender, FLOOR(DATEDIFF('2021-09-30', person.Birthdate) / 365)
-from BI_Bikes_50.TB_Customer as customer join BI_Bikes_50.TB_Person as person on customer.PersonID = person.PersonID)
+INSERT INTO BI_BikesDW_50.Dim_Customer
+SELECT 
+    customer.CustomerID,
+    customer.AccountNumber,
+    CONCAT(person.FirstName,
+            ' ',
+            person.MiddleName,
+            ' ',
+            person.MiddleName),
+    person.Gender,
+    FLOOR(DATEDIFF('2021-09-30', person.Birthdate) / 365)
+FROM
+    BI_Bikes_50.TB_Customer AS customer
+        JOIN
+    BI_Bikes_50.TB_Person AS person ON customer.PersonID = person.PersonID

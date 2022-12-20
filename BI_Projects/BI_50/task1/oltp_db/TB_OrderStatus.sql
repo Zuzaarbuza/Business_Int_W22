@@ -1,4 +1,4 @@
-create table BI_Bikes_50.TB_OrderStatus (
-	OrderStatusID INT primary key not null,
-    OrderStatusName varchar(50) not null
+CREATE TABLE BI_Bikes_50.TB_OrderStatus (
+    OrderStatusID INT PRIMARY KEY NOT NULL,
+    OrderStatusName VARCHAR(50) NOT NULL
 )

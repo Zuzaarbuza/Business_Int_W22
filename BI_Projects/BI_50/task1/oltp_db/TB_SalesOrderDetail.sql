@@ -1,10 +1,10 @@
-create table BI_Bikes_50.TB_SalesOrderDetail (
-	SalesOrderDetailID INT primary key not null,
-    SalesOrderID int not null,
-    ProductID int not null,
-    OrderQty  int not null,
-    UnitPrice decimal(13,4) not null,
+CREATE TABLE BI_Bikes_50.TB_SalesOrderDetail (
+    SalesOrderDetailID INT PRIMARY KEY NOT NULL,
+    SalesOrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    OrderQty INT NOT NULL,
+    UnitPrice DECIMAL(13 , 4 ) NOT NULL,
     
-    foreign key (SalesOrderID) references TB_SalesOrderHeader(SalesOrderID),
-    foreign key (ProductID) references TB_Product(ProductID)
+    FOREIGN KEY (SalesOrderID) REFERENCES TB_SalesOrderHeader (SalesOrderID),
+    FOREIGN KEY (ProductID) REFERENCES TB_Product (ProductID)
 )

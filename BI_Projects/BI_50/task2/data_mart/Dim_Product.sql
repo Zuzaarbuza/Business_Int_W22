@@ -1,12 +1,12 @@
-create table BI_BikesDW_50.Dim_Product (
-	PK_DimProduct INT primary key not null,
-    ProductName varchar(50) not null,
-    ProductModelName varchar(50),
-    ProductSubCategoryName varchar(50),
-    ProductTopCategoryName varchar(50),
-    StandardCost Decimal(13.4) not null,
-    ListPrice Decimal(13,4) not null,   
-    StartDate date not null,
-    EndDate date,
-    ProductStatus varchar(50) not null
+CREATE TABLE BI_BikesDW_50.Dim_Product (
+    PK_DimProduct INT PRIMARY KEY NOT NULL,
+    ProductName VARCHAR(50) NOT NULL,
+    ProductModelName VARCHAR(50),
+    ProductSubCategoryName VARCHAR(50),
+    ProductTopCategoryName VARCHAR(50),
+    StandardCost DECIMAL(13, 4) NOT NULL,
+    ListPrice DECIMAL(13 , 4) NOT NULL,
+    StartDate DATE NOT NULL,
+    EndDate DATE,
+    ProductStatus VARCHAR(50) NOT NULL
 )

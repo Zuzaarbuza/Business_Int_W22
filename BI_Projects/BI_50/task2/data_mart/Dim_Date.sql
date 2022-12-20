@@ -1,13 +1,13 @@
-create table BI_BikesDW_50.Dim_Date (
-	PK_DimDate INT primary key not null,
-	FullDateAlternateKey date,
-    DayNumberOfWeek int,
-    EnglishDayNameOfWeek varchar(50),
-    DayNumberOfMonth int,
-    DayNumberOfYear int,
-    WeekNumberOfYear int,
-    EnglishMonthName varchar(50),
-    MonthNumberOfYear int,
-    CalendarQuarter int,
-    CalendarYear int
+CREATE TABLE BI_BikesDW_50.Dim_Date (
+    PK_DimDate INT PRIMARY KEY NOT NULL,
+    FullDateAlternateKey DATE,
+    DayNumberOfWeek INT,
+    EnglishDayNameOfWeek VARCHAR(50),
+    DayNumberOfMonth INT,
+    DayNumberOfYear INT,
+    WeekNumberOfYear INT,
+    EnglishMonthName VARCHAR(50),
+    MonthNumberOfYear INT,
+    CalendarQuarter INT,
+    CalendarYear INT
 )

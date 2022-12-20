@@ -1,5 +1,5 @@
-create table BI_Bikes_50.TB_ProductTopCategory (
-    ProductTopCategoryID INT primary key not null,
-    Name Varchar(50) not null,
-	ShipSurcharge decimal(13,4)
+CREATE TABLE BI_Bikes_50.TB_ProductTopCategory (
+    ProductTopCategoryID INT PRIMARY KEY NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    ShipSurcharge DECIMAL(13 , 4 )
 )
