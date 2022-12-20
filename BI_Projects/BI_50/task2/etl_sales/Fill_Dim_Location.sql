@@ -1,0 +1,1 @@
+insert into BI_BikesDW_50.Dim_Location select * from BI_Bikes_50.TB_Country

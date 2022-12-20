@@ -1,4 +1,4 @@
-create table Dim_Location (
+create table BI_BikesDW_50.Dim_Location (
 	PK_DimLocation INT primary key not null,
     Country varchar(30) not null,
     Region varchar(30) not null,

@@ -1,0 +1,1 @@
+select * from BI_BikesDW_50.Dim_Product

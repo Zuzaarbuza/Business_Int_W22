@@ -1,4 +1,4 @@
-create table Dim_Date (
+create table BI_BikesDW_50.Dim_Date (
 	PK_DimDate INT primary key not null,
 	FullDateAlternateKey date,
     DayNumberOfWeek int,

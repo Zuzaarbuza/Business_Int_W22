@@ -1,4 +1,4 @@
-create table Dim_Customer (
+create table BI_BikesDW_50.Dim_Customer (
 	PK_DimCustomer INT primary key,
     AccountNumber varchar(30) not null,
     FullName varchar(150),

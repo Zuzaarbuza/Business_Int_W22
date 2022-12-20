@@ -1,4 +1,4 @@
-create table Fact_InternetSales (
+create table BI_BikesDW_50.Fact_InternetSales (
 	PK_FactInternetSales varchar(50) primary key not null,
     SalesOrderNumber varchar(30) not null,
     OrderDateKey INT, 
