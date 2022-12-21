@@ -3,9 +3,9 @@
 
 SELECT 
     europeans.Region,
-    customers.FullName as 'Customer Name',
-    SUM(sales.OrderQty) AS 'Quantity_Sold',
-    (row_number() over (ORDER BY SUM(sales.OrderQty) desc)) as "Rank"
+    customers.FullName AS 'Customer Name',
+    SUM(sales.OrderQty) AS 'Quantity Sold',
+    (ROW_NUMBER() OVER (ORDER BY SUM(sales.OrderQty) DESC)) AS 'Rank'
 FROM
     ((SELECT 
         location.PK_DimLocation, location.Region
@@ -17,5 +17,5 @@ FROM
         JOIN
     BI_BikesDW_50.Dim_Customer AS customers ON sales.CustomerKey = customers.PK_DimCustomer
 GROUP BY sales.CustomerKey
-ORDER BY 'Quantity_Sold' DESC
+ORDER BY 'Quantity Sold' DESC
 LIMIT 5
