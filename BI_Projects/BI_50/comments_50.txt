@@ -1,1 +1,11 @@
-One of the problems with the star schema is that Dim_Date is completely and utterly useless.
+Comments about the MDX:
+
+We had severe problems with MDX queries not working or refusing to load the data from the cube. From our point of view, everything is set up the same way, however some dimensions/attributes just don’t work at all. We’re not able to understand where is the problem, so if you will deduct points for not implementing the MDX queries correctly, then PLEASE TELL US WHAT WE DID WRONG (or send us the files that work). 
+
+The query 3_1.mdx we’ve run and validated that it is correct, the other queries should work from our point of understanding the problem, but we can’t run them for some reason. 
+
+Comments about the Bonus:
+
+One of the problems with the star schema is that Dim_Date is mostly useless for applications in SQL **in our case** since joining is a costlier operation than just invoking year/month directly (at least for the use-case in our case since we are not dealing with that much data). Since we are only using Months/Year we could duplicate this information with ***Date and MonthOrderDate, YearOrderDate and delete the Dim_Date to increase the performance even more.
+
+Fact table is really wide, most of these things (sales order header, detail)  should have been in their own dimension table as this table should contain measures (i.e. those measures we’ve defined in the rolax cube) and foreign keys on all the other dimensions.
