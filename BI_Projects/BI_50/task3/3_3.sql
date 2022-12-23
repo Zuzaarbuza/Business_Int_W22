@@ -1,15 +1,14 @@
 SELECT 
-    C.FullName AS "Customer Name",
-	SUM(F.OrderLineProfit) AS "Profit"
+    (ROW_NUMBER() OVER (ORDER BY SUM(sales.OrderLineProfit) DESC)) AS 'Customer Rank',
+    customer.FullName as "Full Name", 
+	CAST(SUM(sales.OrderLineProfit) AS DECIMAL(13,2)) AS Profit
 FROM
-	Dim_Customer C,
-    Fact_InternetSales F,
-    Dim_Date D
+    BI_BikesDW_50.Fact_InternetSales AS sales
+        JOIN
+    BI_BikesDW_50.Dim_Customer AS customer ON sales.CustomerKey = customer.PK_DimCustomer
 WHERE
-	D.MonthNumberOfYear < 7
-    AND D.CalendarYear = 2021
-    AND C.PK_DimCustomer = F.CustomerKey
-    AND F.OrderDateKey = D.PK_DimDate
-GROUP BY c.FullName 
-ORDER BY 2 DESC
-LIMIT 10;
+    YEAR(sales.OrderDate) = 2021
+        AND MONTH(sales.OrderDate) <= 6
+GROUP BY sales.CustomerKey
+ORDER BY profit DESC
+LIMIT 10

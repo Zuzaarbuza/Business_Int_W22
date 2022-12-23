@@ -1,9 +1,9 @@
 SELECT 
 	L.Country,
-    SUM(F.OrderLineProfit) AS "Profit"
+    CAST(SUM(F.OrderLineProfit) AS DECIMAL(13,2)) AS "Profit"
 FROM 
-	Dim_Location L,
-    Fact_InternetSales F
+	BI_BikesDW_50.Dim_Location L,
+    BI_BikesDW_50.Fact_InternetSales F
 WHERE
 	F.UnitPrice BETWEEN 1000 AND 2000
     AND F.ShipToLocationKey = L.PK_DimLocation

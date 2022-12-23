@@ -3,11 +3,11 @@ SELECT
 	L.Country, 
 	D.CalendarYear AS "Year", 
     D.EnglishMonthName AS "Month",
-    SUM(f.OrderLineShippingCost) AS 'Shipping Costs'
+    CAST(SUM(f.OrderLineShippingCost) AS DECIMAL(13,2)) AS 'Shipping Costs'
 FROM
-	Fact_InternetSales F,
-    Dim_Location L,
-    Dim_Date D
+	BI_BikesDW_50.Fact_InternetSales F,
+    BI_BikesDW_50.Dim_Location L,
+    BI_BikesDW_50.Dim_Date D
 WHERE
 	F.OrderDateKey = D.PK_DimDate
     AND L.Country = 'United Kingdom'

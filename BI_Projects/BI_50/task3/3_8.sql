@@ -1,11 +1,12 @@
 -- Accounting – taxes charged from the customers in certain countries
 -- What is the monthly amount of taxes for the buyers in France and Germany in the first six months of 2021 (January through June)? Use OrderDate, ShipToLocation and OrderLineTaxAmt.
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 SELECT 
     YEAR(sales.OrderDate) AS 'Calendar Year',
     MONTHNAME(sales.OrderDate) AS 'Month',
     location.Country AS Country,
-    SUM(sales.OrderLineTaxAmt) AS 'Tax Amount'
+    CAST(SUM(sales.OrderLineTaxAmt) AS DECIMAL(13,2)) AS 'Tax Amount'
 FROM
     (BI_BikesDW_50.Fact_InternetSales AS sales
     JOIN BI_BikesDW_50.Dim_Location AS location ON sales.ShipToLocationKey = location.PK_DimLocation)

@@ -6,7 +6,7 @@ SELECT
             ' ',
             person.MiddleName,
             ' ',
-            person.MiddleName),
+            person.LastName),
     person.Gender,
     FLOOR(DATEDIFF('2021-09-30', person.Birthdate) / 365)
 FROM

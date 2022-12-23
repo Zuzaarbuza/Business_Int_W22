@@ -27,8 +27,8 @@ SELECT
     detail.UnitPrice,
     detail.OrderQty * detail.UnitPrice AS OrderLineTotal,
     detail.OrderQty * detail.UnitPrice - detail.OrderQty * product.StandardCost AS OrderLineProfit,
-    CAST((detail.OrderQty * detail.UnitPrice * country.TaxRate) AS DECIMAL(13, 4)) AS OrderLineTaxAmt,
-    CAST((top.ShipSurcharge + method.ShipBase + (detail.OrderQty * method.ShipRate * country.ShipCoeff)) AS DECIMAL(13, 4)) AS OrderLineShippingCost
+    (detail.OrderQty * detail.UnitPrice * country.TaxRate) AS OrderLineTaxAmt,
+    (top.ShipSurcharge + method.ShipBase + (detail.OrderQty * method.ShipRate * country.ShipCoeff)) AS OrderLineShippingCost
 FROM
     (((((((BI_Bikes_50.TB_SalesOrderHeader AS header
     JOIN BI_Bikes_50.TB_SalesOrderDetail AS detail ON header.SalesOrderID = detail.SalesOrderID)

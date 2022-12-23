@@ -1,9 +1,9 @@
 SELECT 
 	P.ProductTopCategoryName AS "Product Top Category",
-    SUM(F.OrderLineProfit) AS "Profit"
+    CAST(SUM(F.OrderLineProfit) AS DECIMAL(13,2)) AS "Profit"
 FROM 
-	Dim_Product P,
-    Fact_InternetSales F
+	BI_BikesDW_50.Dim_Product P,
+    BI_BikesDW_50.Fact_InternetSales F
 WHERE
 	F.ProductKey = P.PK_DimProduct
     AND YEAR(F.OrderDate) = '2021'

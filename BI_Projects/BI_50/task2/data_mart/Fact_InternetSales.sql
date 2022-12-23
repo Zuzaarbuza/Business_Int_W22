@@ -16,8 +16,8 @@ CREATE TABLE BI_BikesDW_50.Fact_InternetSales (
     UnitPrice DECIMAL(13, 4) NOT NULL,
     OrderLineTotal DECIMAL(13, 4),
     OrderLineProfit DECIMAL(13, 4),
-    OrderLineTaxAmt DECIMAL(13, 4),
-    OrderLineShippingCost DECIMAL(13, 4),
+    OrderLineTaxAmt DECIMAL(13, 8),
+    OrderLineShippingCost DECIMAL(13, 8),
     
     CONSTRAINT FK_ProductKey_FactInternetSales FOREIGN KEY (ProductKey) REFERENCES Dim_Product(PK_DimProduct),
     CONSTRAINT FK_ShipToLocation_FactInternetSales FOREIGN KEY (ShipToLocationKey) REFERENCES Dim_Location(PK_DimLocation),

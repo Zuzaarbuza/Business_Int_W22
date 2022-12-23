@@ -5,7 +5,7 @@ SELECT
     europeans.Region,
     customers.FullName AS 'Customer Name',
     SUM(sales.OrderQty) AS 'Quantity Sold',
-    (ROW_NUMBER() OVER (ORDER BY SUM(sales.OrderQty) DESC)) AS 'Rank'
+    ROW_NUMBER() OVER (ORDER BY SUM(sales.OrderQty) DESC) AS 'Rank'
 FROM
     ((SELECT 
         location.PK_DimLocation, location.Region
