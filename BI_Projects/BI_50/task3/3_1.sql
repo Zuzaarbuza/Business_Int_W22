@@ -9,3 +9,5 @@ WHERE
     AND YEAR(F.OrderDate) = '2021'
 GROUP BY 
 	P.ProductTopCategoryName
+ORDER BY 2 DESC
+	
