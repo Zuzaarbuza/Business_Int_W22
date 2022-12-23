@@ -1,0 +1,7 @@
+Select
+	measures.[Profit] on columns,
+	Order([Product].[TopCategory].members, measures.[Profit], desc)on rows
+from 
+	bike_sales
+where
+	[OrderDate].[Year].[2021]

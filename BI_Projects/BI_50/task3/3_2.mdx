@@ -1,0 +1,7 @@
+Select
+	measures.[Profit] on columns,
+	Order([Location].[Country].members, measures.[Profit], desc) on rows
+from 
+	bike_sales
+where
+	[OrderDate].[Year].[2019]

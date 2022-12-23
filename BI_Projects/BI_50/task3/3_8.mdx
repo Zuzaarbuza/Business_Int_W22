@@ -1,0 +1,9 @@
+Select
+	measures.[TaxAmount] on columns,
+	Order([Location].[Country].members, measures.[TaxAmount], desc)on rows
+from 
+	bike_sales
+where
+	[OrderDate].[Year].[2021] AND
+	[OrderDate].[Month] <= 6 AND
+	([Location].[Country].[France] OR [Location].[Country].[Germany])
